@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-component1',
   templateUrl: './component1.component.html',
@@ -12,6 +13,7 @@ export class Component1Component implements OnDestroy, OnInit {
 
   ngOnInit() {
     this.title = 'asdfghj';
+
     this.activatedRoute.params.subscribe(res=>{
       console.log(res);
       this.array1.forEach(element=>{

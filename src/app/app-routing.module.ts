@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'learn/:id', component: Component1Component },
-  { path: '**', component: Component1Component },
+  // { path: 'learn/:id', component: Component1Component },
+  { path: 'learn/:id', loadChildren: './component1/component1-module.module#Component1ModuleModule' },
+  // { path: '**', component: Component1Component },
 ];
+//localhost:4200/learn/1/component1/etc
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
