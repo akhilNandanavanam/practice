@@ -12,7 +12,7 @@ import { Component1ModuleModule } from './component1/component1-module.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Component1ModuleModule
+    Component1ModuleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

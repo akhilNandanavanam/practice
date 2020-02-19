@@ -5,6 +5,7 @@ import { Component1ModuleRoutingModule } from './component1-module-routing.modul
 import { Component1Component } from './component1.component';
 import { ChildComponent1Component } from './child-component1/child-component1.component';
 import { ChildComponent1Service } from './child-component1/child-component1.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ChildComponent1Service } from './child-component1/child-component1.serv
   ],
   imports: [
     CommonModule,
-    Component1ModuleRoutingModule
+    Component1ModuleRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ChildComponent1Service]
 })
