@@ -1,13 +1,15 @@
 <h2>Welcome to Forms</h2> 
 <br>
-<input type="text" [formControl]="myField1"/>
-<!-- <span *ngIf="isError">{{InputError}}</span> -->
+<form [formGroup]="myFirstFormGroup" >
+<input type="text" formControlName="firstName" placeholder="FirstName" (change)="captureInput($event)"/>
+<span *ngIf="!this.myFirstFormGroup.get('firstName').valid">Enter Valid First Name</span>
 <br>
-<input type="number" [formControl]='numberForm'>
+<input type="number" formControlName="numberForm" placeholder="Amount" (change)="captureInput($event)">
 <br>
-<select [formControl]="selectBoxForm">
+<select formControlName="selectBox" placeholder="Select One..." (change)="captureInput($event)">
   <option *ngFor="let option of options" value="{{option}}">{{option}}</option>
 </select>
-<button (click)="showFormValue('pratyusha')">Values!!!</button>
+</form>
+<button [disabled]="!this.myFirstFormGroup.valid" (click)="showFormValue('pratyusha')">Values!!!</button>
 <br>
-{{formValue}}
+<!-- {{formValue}} -->
