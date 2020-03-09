@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-component1',
   templateUrl: './component1.component.html',
@@ -24,7 +25,8 @@ export class Component1Component implements OnDestroy, OnInit {
 
   // FormControl -> FormGroup -> FormArray
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private http: HttpClient) { }
 
   ngOnInit() {
     this.myFirstFormGroup = new FormGroup({
